@@ -1,0 +1,257 @@
+{
+  "navbar": {
+    "_note": "English",
+    "home": "Home",
+    "Internships": "Internships",
+    "Jobs": "Jobs",
+    "Community": "Community",
+    "Resume Generator": "Resume Generator",
+    "Search": "Search...",
+    "Admin": "Admin",
+    "Login": "Login",
+    "Login History": "Login History",
+    "Upgrade": "Upgrade",
+    "Logout": "Logout",
+    "Logged out successfully": "Logged out successfully",
+    "Logout failed": "Logout failed",
+    "Please login to access community": "Please login to access community"
+  },
+  "adminlogin": {
+    "title": "Admin Login",
+    "Subtitle": "Access the admin dashboard to manage internships and applications",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign in",
+    "signingIn": "Signing in...",
+    "fillAllDetails": "Please fill in all details",
+    "loginSuccess": "Logged in successfully",
+    "invalidCredentials": "Invalid credentials"
+  },
+  "home": {
+    "heroTitle": "Make your dream career a reality",
+    "heroSubtitle": "Trending on InternArea 🔥",
+
+    "premiumTitle": "Want to apply to more internships?",
+    "premiumSubtitle": "Upgrade your subscription and unlock unlimited opportunities.",
+    "viewPlans": "View Plans",
+
+    "latestInternships": "Latest internships on Intern Area",
+    "popularCategories": "POPULAR CATEGORIES:",
+
+    "activelyHiring": "Actively Hiring",
+    "internshipTag": "Internship",
+    "jobTag": "Jobs",
+    "viewDetails": "View details",
+
+    "latestJobs": "Latest Jobs",
+
+    "statsCompanies": "companies hiring",
+    "statsOpenings": "new openings everyday",
+    "statsStudents": "active students",
+    "statsLearners": "learners",
+
+    "categories": {
+      "bigBrands": "Big Brands",
+      "workFromHome": "Work From Home",
+      "partTime": "Part-time",
+      "mba": "MBA",
+      "engineering": "Engineering",
+      "media": "Media",
+      "design": "Design",
+      "dataScience": "Data Science"
+    },
+
+    "slides": {
+      "slide1": "Start Your Career Journey",
+      "slide2": "Learn From The Best",
+      "slide3": "Grow Your Skills",
+      "slide4": "Connect With Top Companies"
+    }
+  },
+  "userlogin": {
+    "welcomeBack": "Welcome Back 👋",
+    "loginToContinue": "Login to continue",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "loggingIn": "Logging in...",
+    "or": "OR",
+    "continueWithGoogle": "Continue with Google",
+    "dontHaveAccount": "Don’t have an account?",
+    "signUp": "Sign up",
+    "otpSent": "OTP sent to your email",
+    "googleLoginSuccess": "Googgle Logged in successfully",
+    "googleLoginFailed": "Googgle Login failed",
+    "loginSuccess": "Logged in successfully",
+    "loginFailed": "Login failed"
+  },
+  "usersignup": {
+    "title": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "createAccount": "Create Account",
+    "or": "OR",
+    "continueWithGoogle": "Continue with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login",
+    "accountCreatedSuccess": "Account created successfully",
+    "signedUpWithGoogle": "Signed up with Google",
+    "googleSignupFailed": "Google signup failed"
+  },
+  "otp": {
+    "title": "Verify Login",
+    "subtitle": "Enter the OTP sent to your email",
+    "placeholder": "Enter OTP",
+    "verifyButton": "Verify OTP",
+    "verifying": "Verifying...",
+    "enterValidOtp": "Enter valid 6-digit OTP",
+    "otpVerified": "OTP verified",
+    "invalidOtp": "Invalid OTP"
+  },
+  "upgrade": {
+    "title": "Upgrade Your Internship Access",
+    "subtitle": "Choose a subscription plan to unlock more internship applications.",
+    "mostPopular": "MOST POPULAR",
+    "perMonth": "/month",
+    "planActive": "Plan Active",
+    "processing": "Processing...",
+    "buyNow": "Buy Now",
+
+    "planAlreadyActive": "You already have an active plan. You can upgrade after it expires.",
+    "invalidPlan": "Invalid plan selected",
+    "createOrderFailed": "Failed to create subscription order",
+
+    "limitReached": "You've reached all your applying limits. Wait for the month to end to take a new plan.",
+    "activeUntil": "Active until",
+    "daysLeft": "days left",
+
+    "userNotLoggedIn": "User not logged in",
+    "planExpiryMessage": "Your current plan expires on {{date}}. You can upgrade only after that date.",
+    "upgradeTimeRestricted": "You can only upgrade plan between 10 AM to 11 AM IST",
+    "subscriptionActivated": "Subscription Activated ✅",
+    "invoiceSent": "📧 Invoice sent to your registered email.",
+    "verificationFailed": "Verification Failed ❌",
+    "somethingWentWrong": "Something went wrong. Please try again.",
+
+    "plans": {
+      "FREE": "Apply to 1 internship",
+      "BRONZE": "Apply to 3 internships",
+      "SILVER": "Apply to 5 internships",
+      "GOLD": "Unlimited internships"
+    },
+
+    "features": {
+      "oneApplication": "1 Application",
+      "threeApplications": "3 Applications",
+      "fiveApplications": "5 Applications",
+      "unlimitedApplications": "Unlimited Applications",
+      "basicAccess": "Basic Access",
+      "standardVisibility": "Standard Visibility",
+      "priorityListing": "Priority Listing",
+      "topVisibility": "Top Visibility"
+    }
+  },
+  "internship": {
+    "filters": "Filters",
+    "clearAll": "Clear all",
+    "category": "Category",
+    "location": "Location",
+    "categoryPlaceholder": "e.g. Marketing Intern",
+    "locationPlaceholder": "e.g. Mumbai",
+    "workFromHome": "Work from home",
+    "partTime": "Part-time",
+    "monthlyStipend": "Monthly Stipend (₹)",
+    "showFilters": "Show Filters",
+    "internshipsFound": "{{count}} Internships found",
+    "activelyHiring": "Actively Hiring",
+    "startDate": "Start Date",
+    "stipend": "Stipend",
+    "internshipType": "Internship",
+    "postedRecently": "Posted recently",
+    "viewDetails": "View Details"
+  },
+  "footer": {
+    "internshipByPlaces": "Internship by Places",
+    "internshipByStream": "Internship by Stream",
+    "jobPlaces": "Job Places",
+    "jobsByStreams": "Jobs by Streams",
+
+    "places": {
+      "newYork": "New York",
+      "losAngeles": "Los Angeles",
+      "chicago": "Chicago",
+      "sanFrancisco": "San Francisco",
+      "miami": "Miami",
+      "seattle": "Seattle"
+    },
+
+    "about": "About Us",
+    "careers": "Careers",
+    "press": "Press",
+    "news": "News",
+    "mediaKit": "Media Kit",
+    "contact": "Contact Us",
+
+    "blog": "Blog",
+    "newsletter": "Newsletter",
+    "events": "Events",
+    "helpCenter": "Help Center",
+    "tutorials": "Tutorials",
+    "support": "Support",
+
+    "startups": "Startups",
+    "enterprise": "Enterprise",
+    "government": "Government",
+    "saas": "SaaS",
+    "marketplaces": "Marketplaces",
+    "ecommerce": "Ecommerce",
+
+    "teamDiary": "Team Diary",
+    "terms": "Terms and Conditions",
+    "sitemap": "Sitemap",
+
+    "getAndroidApp": "Get Android App",
+    "rights": "All Rights Reserved"
+  },
+  "resumePage": {
+    "editYourResume": "Edit Your Resume",
+    "createYourResume": "Create Your Resume",
+    "updateAnytime": "You can update your resume anytime",
+    "otpPaymentRequired": "OTP verification & ₹50 payment required",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "qualification": "Qualification",
+    "professionalDetails": "Professional details",
+    "skills": "Skills",
+    "aboutYou": "About you",
+    "uploadPhoto": "Upload Photo",
+    "generateResumeOtp": "Generate Resume (OTP)",
+    "enterOtp": "Enter OTP",
+    "verifyOtp": "Verify OTP",
+    "payAndCreate": "Pay ₹50 & Create Resume",
+    "saveChanges": "Save Changes",
+    "toastOtpSent": "OTP sent to your email 📧",
+    "toastEmailVerified": "Email verified successfully ✅",
+    "toastResumeCreated": "Resume created successfully 🎉",
+    "toastResumeUpdated": "Resume updated successfully ✅",
+    "paymentFailed": "Payment initiation failed",
+    "paymentVerificationFailed": "Payment verification failed",
+    "userNotLoggedIn": "User not logged in",
+    "failedToSendOtp": "Failed to send OTP",
+    "otpVerificationFailed": "OTP verification failed"
+  },
+  "loginHistoryPage": {
+    "loading": "Loading login history...",
+    "title": "🔐 Login History",
+    "noHistory": "No login history available.",
+    "browser": "Browser",
+    "os": "OS",
+    "device": "Device",
+    "ipAddress": "IP Address",
+    "loginTime": "Login Time",
+    "fetchError": "Error fetching login history"
+  }
+}

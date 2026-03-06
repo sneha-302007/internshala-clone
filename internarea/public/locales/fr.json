@@ -1,0 +1,256 @@
+{
+  "navbar": {
+    "_note": "French",
+    "home": "Accueil",
+    "Internships": "Stages",
+    "Jobs": "Emplois",
+    "Community": "Communauté",
+    "Resume Generator": "Générateur de CV",
+    "Search": "Rechercher...",
+    "Admin": "Admin",
+    "Login": "Connexion",
+    "Login History": "Historique de connexion",
+    "Upgrade": "Mettre à niveau",
+    "Logout": "Déconnexion",
+    "Logged out successfully": "Déconnexion réussie",
+    "Logout failed": "Échec de la déconnexion",
+    "Please login to access community": "Veuillez vous connecter pour accéder à la communauté"
+  },
+  "adminlogin": {
+    "title": "Connexion administrateur",
+    "Subtitle": "Accédez au tableau de bord administrateur pour gérer les stages et les candidatures",
+    "username": "Nom d'utilisateur",
+    "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion en cours...",
+    "fillAllDetails": "Veuillez remplir tous les champs",
+    "loginSuccess": "Connexion réussie",
+    "invalidCredentials": "Identifiants invalides"
+  },
+  "home": {
+    "heroTitle": "Réalisez la carrière de vos rêves",
+    "heroSubtitle": "Tendances sur InternArea 🔥",
+
+    "premiumTitle": "Vous souhaitez postuler à plus de stages ?",
+    "premiumSubtitle": "Mettez à niveau votre abonnement et débloquez des opportunités illimitées.",
+    "viewPlans": "Voir les plans",
+
+    "latestInternships": "Derniers stages sur Intern Area",
+    "popularCategories": "CATÉGORIES POPULAIRES :",
+
+    "activelyHiring": "Recrutement en cours",
+    "internshipTag": "Stage",
+    "jobTag": "Emplois",
+    "viewDetails": "Voir les détails",
+
+    "latestJobs": "Derniers emplois",
+
+    "statsCompanies": "entreprises qui recrutent",
+    "statsOpenings": "nouvelles offres chaque jour",
+    "statsStudents": "étudiants actifs",
+    "statsLearners": "apprenants",
+
+    "categories": {
+      "bigBrands": "Grandes marques",
+      "workFromHome": "Télétravail",
+      "partTime": "Temps partiel",
+      "mba": "MBA",
+      "engineering": "Ingénierie",
+      "media": "Médias",
+      "design": "Design",
+      "dataScience": "Science des données"
+    },
+
+    "slides": {
+      "slide1": "Commencez votre parcours professionnel",
+      "slide2": "Apprenez des meilleurs",
+      "slide3": "Développez vos compétences",
+      "slide4": "Connectez-vous aux meilleures entreprises"
+    }
+  },
+  "userlogin": {
+    "welcomeBack": "Bon retour 👋",
+    "loginToContinue": "Connectez-vous pour continuer",
+    "email": "Email",
+    "password": "Mot de passe",
+    "login": "Connexion",
+    "loggingIn": "Connexion en cours...",
+    "or": "OU",
+    "continueWithGoogle": "Continuer avec Google",
+    "dontHaveAccount": "Vous n’avez pas de compte ?",
+    "signUp": "S’inscrire",
+    "otpSent": "OTP envoyé à votre email",
+    "googleLoginSuccess": "Connexion Googgle réussie",
+    "googleLoginFailed": "Échec de la connexion Googgle",
+    "loginSuccess": "Connexion réussie",
+    "loginFailed": "Échec de la connexion"
+  },
+  "usersignup": {
+    "title": "Inscription",
+    "email": "Email",
+    "password": "Mot de passe",
+    "createAccount": "Créer un compte",
+    "or": "OU",
+    "continueWithGoogle": "Continuer avec Google",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "login": "Connexion",
+    "accountCreatedSuccess": "Compte créé avec succès",
+    "signedUpWithGoogle": "Inscription avec Google réussie",
+    "googleSignupFailed": "Échec de l'inscription avec Google"
+  },
+  "otp": {
+    "title": "Vérifier la connexion",
+    "subtitle": "Entrez le OTP envoyé à votre email",
+    "placeholder": "Entrez OTP",
+    "verifyButton": "Vérifier OTP",
+    "verifying": "Vérification...",
+    "enterValidOtp": "Entrez un OTP valide à 6 chiffres",
+    "otpVerified": "OTP vérifié",
+    "invalidOtp": "OTP invalide"
+  },
+  "upgrade": {
+    "title": "Améliorez votre accès aux stages",
+    "subtitle": "Choisissez un abonnement pour débloquer plus de candidatures aux stages.",
+    "mostPopular": "LE PLUS POPULAIRE",
+    "perMonth": "/mois",
+    "planActive": "Forfait actif",
+    "processing": "Traitement...",
+    "buyNow": "Acheter maintenant",
+
+    "planAlreadyActive": "Vous avez déjà un forfait actif. Vous pouvez effectuer une mise à niveau après son expiration.",
+    "invalidPlan": "Forfait sélectionné invalide",
+    "createOrderFailed": "Échec de la création de la commande d’abonnement",
+
+    "limitReached": "Vous avez atteint toutes vos limites de candidature. Attendez la fin du mois pour prendre un nouveau forfait.",
+    "activeUntil": "Actif jusqu’au",
+    "daysLeft": "jours restants",
+
+    "userNotLoggedIn": "Utilisateur non connecté",
+    "planExpiryMessage": "Votre forfait actuel expire le {{date}}. Vous pouvez mettre à niveau uniquement après cette date.",
+    "upgradeTimeRestricted": "Vous pouvez uniquement mettre à niveau entre 10h et 11h IST",
+    "subscriptionActivated": "Abonnement activé ✅",
+    "invoiceSent": "📧 Facture envoyée à votre e-mail enregistré.",
+    "verificationFailed": "Échec de la vérification ❌",
+    "somethingWentWrong": "Une erreur s’est produite. Veuillez réessayer.",
+
+    "plans": {
+      "FREE": "Postuler à 1 stage",
+      "BRONZE": "Postuler à 3 stages",
+      "SILVER": "Postuler à 5 stages",
+      "GOLD": "Stages illimités"
+    },
+
+    "features": {
+      "oneApplication": "1 Candidature",
+      "threeApplications": "3 Candidatures",
+      "fiveApplications": "5 Candidatures",
+      "unlimitedApplications": "Candidatures illimitées",
+      "basicAccess": "Accès basique",
+      "standardVisibility": "Visibilité standard",
+      "priorityListing": "Mise en avant prioritaire",
+      "topVisibility": "Visibilité maximale"
+    }
+  },
+  "internship": {
+    "filters": "Filtres",
+    "clearAll": "Tout effacer",
+    "category": "Catégorie",
+    "location": "Localisation",
+    "categoryPlaceholder": "ex. Stagiaire Marketing",
+    "locationPlaceholder": "ex. Mumbai",
+    "workFromHome": "Télétravail",
+    "partTime": "Temps partiel",
+    "monthlyStipend": "Allocation mensuelle (₹)",
+    "showFilters": "Afficher les filtres",
+    "internshipsFound": "{{count}} stages trouvés",
+    "activelyHiring": "Recrutement actif",
+    "startDate": "Date de début",
+    "stipend": "Allocation",
+    "internshipType": "Stage",
+    "postedRecently": "Publié récemment",
+    "viewDetails": "Voir les détails"
+  },
+  "footer": {
+    "internshipByPlaces": "Stages par Lieu",
+    "internshipByStream": "Stages par Domaine",
+    "jobPlaces": "Lieux d'Emploi",
+    "jobsByStreams": "Emplois par Domaine",
+
+    "places": {
+      "newYork": "New York",
+      "losAngeles": "Los Angeles",
+      "chicago": "Chicago",
+      "sanFrancisco": "San Francisco",
+      "miami": "Miami",
+      "seattle": "Seattle"
+    },
+    "about": "À Propos",
+    "careers": "Carrières",
+    "press": "Presse",
+    "news": "Actualités",
+    "mediaKit": "Kit Média",
+    "contact": "Contactez-Nous",
+
+    "blog": "Blog",
+    "newsletter": "Newsletter",
+    "events": "Événements",
+    "helpCenter": "Centre d'Aide",
+    "tutorials": "Tutoriels",
+    "support": "Support",
+
+    "startups": "Startups",
+    "enterprise": "Entreprise",
+    "government": "Gouvernement",
+    "saas": "SaaS",
+    "marketplaces": "Places de Marché",
+    "ecommerce": "Commerce Électronique",
+
+    "teamDiary": "Journal d'Équipe",
+    "terms": "Termes et Conditions",
+    "sitemap": "Plan du Site",
+
+    "getAndroidApp": "Obtenir l'Application Android",
+    "rights": "Tous Droits Réservés"
+  },
+  "resumePage": {
+    "editYourResume": "Modifier votre CV",
+    "createYourResume": "Créer votre CV",
+    "updateAnytime": "Vous pouvez mettre à jour votre CV à tout moment",
+    "otpPaymentRequired": "Vérification OTP et paiement de ₹50 requis",
+    "fullName": "Nom complet",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "qualification": "Qualification",
+    "professionalDetails": "Détails professionnels",
+    "skills": "Compétences",
+    "aboutYou": "À propos de vous",
+    "uploadPhoto": "Télécharger une photo",
+    "generateResumeOtp": "Générer le CV (OTP)",
+    "enterOtp": "Entrer l'OTP",
+    "verifyOtp": "Vérifier l'OTP",
+    "payAndCreate": "Payer ₹50 et créer le CV",
+    "saveChanges": "Enregistrer les modifications",
+    "toastOtpSent": "OTP envoyé à votre e-mail 📧",
+    "toastEmailVerified": "E-mail vérifié avec succès ✅",
+    "toastResumeCreated": "CV créé avec succès 🎉",
+    "toastResumeUpdated": "CV mis à jour avec succès ✅",
+    "paymentFailed": "Échec de l'initialisation du paiement",
+    "paymentVerificationFailed": "Échec de la vérification du paiement",
+    "userNotLoggedIn": "Utilisateur non connecté",
+    "failedToSendOtp": "Échec de l'envoi de l'OTP",
+    "otpVerificationFailed": "Échec de la vérification de l'OTP"
+  },
+  "loginHistoryPage": {
+    "loading": "Chargement de l'historique de connexion...",
+    "title": "🔐 Historique de connexion",
+    "noHistory": "Aucun historique de connexion disponible.",
+    "browser": "Navigateur",
+    "os": "Système d'exploitation",
+    "device": "Appareil",
+    "ipAddress": "Adresse IP",
+    "loginTime": "Heure de connexion",
+    "fetchError": "Erreur lors de la récupération de l'historique de connexion"
+  }
+}

@@ -1,16 +1,34 @@
 import { User, Lock } from "lucide-react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { LanguageContext } from "@/utils/LanguageContext";
 
 const index = () => {
+  const { language, changeLanguage, translations } =
+  useContext(LanguageContext);
+
+ const t = (key: string): string => {
+  return key.split(".").reduce((obj: any, i: string) => {
+    return obj?.[i];
+  }, translations) || key;
+};
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "es", label: "Spanish" },
+    { code: "hi", label: "Hindi" },
+    { code: "pt", label: "Portuguese" },
+    { code: "zh", label: "Chinese" },
+    { code: "fr", label: "French" },
+  ];
   const [formadata, setformadata] = useState({
     username: "",
     password: "",
   });
-  const router = useRouter()
-  const [isloading, setisloading] = useState(false)
+  const router = useRouter();
+  const [isloading, setisloading] = useState(false);
+
   const handlechange = (e: any) => {
     const { name, value } = e.target;
     setformadata((prev) => ({
@@ -21,20 +39,20 @@ const index = () => {
   const handlesubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formadata.username || !formadata.password) {
-      toast.error("Please fill in all detials");
+      toast.error(t("adminlogin.fillAllDetails"));
       return;
     }
     try {
       setisloading(true);
       const res = await axios.post(
-        'https://internshala-clone-xhqv.onrender.com/api/admin/adminlogin',
-        formadata
+        "https://internshala-clone-xhqv.onrender.com/api/admin/adminlogin",
+        formadata,
       );
-      toast.success("logged in successfuly");
+      toast.success(t("adminlogin.loginSuccess"));
       router.push("/adminpanel");
     } catch (error) {
       console.log(error);
-      toast.error("Invalid credentials");
+      toast.error(t("adminlogin.invalidCredentials"));
     } finally {
       setisloading(false);
     }
@@ -44,10 +62,10 @@ const index = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="text-center text-3xl font-extrabold text-gray-900">
-          Admin Login
+         {t("adminlogin.title")}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Access the admin dashboard to manage internships and applications
+        { t( "adminlogin.Subtitle")}
         </p>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -58,7 +76,7 @@ const index = () => {
                 htmlFor="username"
                 className="block text-sm font-medium text-gray-700"
               >
-                Username
+                {t("adminlogin.username")}
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -72,7 +90,7 @@ const index = () => {
                   value={formadata.username}
                   onChange={handlechange}
                   className="block w-full text-black pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder="Enter your username"
+                  placeholder={t("adminlogin.usernamePlaceholder")}
                 />
               </div>
             </div>
@@ -81,7 +99,7 @@ const index = () => {
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-700"
               >
-                Password
+                {t("adminlogin.password")}
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -95,7 +113,7 @@ const index = () => {
                   value={formadata.password}
                   onChange={handlechange}
                   className="block w-full text-black pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder="Enter your password"
+                  placeholder={t("adminlogin.passwordPlaceholder")}
                 />
               </div>
             </div>
@@ -108,10 +126,10 @@ const index = () => {
                 {isloading ? (
                   <div className="flex items-center">
                     <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white mr-2"></div>
-                    Signing in...
+                    {t("adminlogin.signingIn")}
                   </div>
                 ) : (
-                  " Sign in"
+                 t("adminlogin.signIn")
                 )}
               </button>
             </div>

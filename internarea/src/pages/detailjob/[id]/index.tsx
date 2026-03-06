@@ -273,9 +273,9 @@ const index = () => {
             <div className="p-6 space-y-6">
               {/* Resume Section */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <Link href="/resumeView" className="text-lg font-semibold underline text-gray-900 hover:text-blue-700 mb-2">
                   Your Resume
-                </h3>
+                </Link>
                 <p className="text-gray-600">
                   Your current resume will be submitted with the application
                 </p>

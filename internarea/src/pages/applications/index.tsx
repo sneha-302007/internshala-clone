@@ -13,7 +13,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 // const Applications = [
 //   {
-//     _id: "1",
+//_id: "1",
 //     company: "Tech Corp",
 //     category: "Software",
 //     user: { name: "John Doe", email: "john@example.com" },

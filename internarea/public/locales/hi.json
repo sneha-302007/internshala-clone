@@ -1,0 +1,257 @@
+{
+  "navbar": {
+    "_note": "Hindi",
+    "home": "होम",
+    "Internships": "इंटर्नशिप",
+    "Jobs": "नौकरियाँ",
+    "Community": "समुदाय",
+    "Resume Generator": "रिज़्यूमे जेनरेटर",
+    "Search": "खोजें...",
+    "Admin": "एडमिन",
+    "Login": "लॉगिन",
+    "Login History": "लॉगिन इतिहास",
+    "Upgrade": "अपग्रेड",
+    "Logout": "लॉगआउट",
+    "Logged out successfully": "सफलतापूर्वक लॉगआउट हुआ",
+    "Logout failed": "लॉगआउट विफल",
+    "Please login to access community": "समुदाय तक पहुँचने के लिए कृपया लॉगिन करें"
+  },
+  "adminlogin": {
+    "title": "एडमिन लॉगिन",
+    "Subtitle": "इंटर्नशिप और आवेदनों को प्रबंधित करने के लिए एडमिन डैशबोर्ड तक पहुँचें",
+    "username": "यूज़रनेम",
+    "usernamePlaceholder": "अपना यूज़रनेम दर्ज करें",
+    "password": "पासवर्ड",
+    "passwordPlaceholder": "अपना पासवर्ड दर्ज करें",
+    "signIn": "साइन इन",
+    "signingIn": "साइन इन हो रहा है...",
+    "fillAllDetails": "कृपया सभी विवरण भरें",
+    "loginSuccess": "सफलतापूर्वक लॉगिन हुआ",
+    "invalidCredentials": "अमान्य क्रेडेंशियल्स"
+  },
+  "home": {
+    "heroTitle": "अपने सपनों के करियर को साकार करें",
+    "heroSubtitle": "InternArea पर ट्रेंडिंग 🔥",
+
+    "premiumTitle": "क्या आप और अधिक इंटर्नशिप के लिए आवेदन करना चाहते हैं?",
+    "premiumSubtitle": "अपनी सदस्यता अपग्रेड करें और असीमित अवसर प्राप्त करें।",
+    "viewPlans": "प्लान देखें",
+
+    "latestInternships": "Intern Area पर नवीनतम इंटर्नशिप",
+    "popularCategories": "लोकप्रिय श्रेणियाँ:",
+
+    "activelyHiring": "सक्रिय रूप से भर्ती",
+    "internshipTag": "इंटर्नशिप",
+    "jobTag": "नौकरियाँ",
+    "viewDetails": "विवरण देखें",
+
+    "latestJobs": "नवीनतम नौकरियाँ",
+
+    "statsCompanies": "कंपनियाँ भर्ती कर रही हैं",
+    "statsOpenings": "प्रतिदिन नई नौकरियाँ",
+    "statsStudents": "सक्रिय छात्र",
+    "statsLearners": "सीखने वाले",
+
+    "categories": {
+      "bigBrands": "बड़ी ब्रांड्स",
+      "workFromHome": "घर से काम",
+      "partTime": "पार्ट-टाइम",
+      "mba": "MBA",
+      "engineering": "इंजीनियरिंग",
+      "media": "मीडिया",
+      "design": "डिज़ाइन",
+      "dataScience": "डेटा साइंस"
+    },
+
+    "slides": {
+      "slide1": "अपने करियर की शुरुआत करें",
+      "slide2": "सर्वश्रेष्ठ से सीखें",
+      "slide3": "अपनी कौशल बढ़ाएँ",
+      "slide4": "शीर्ष कंपनियों से जुड़ें"
+    }
+  },
+  "userlogin": {
+    "welcomeBack": "वापसी पर स्वागत है 👋",
+    "loginToContinue": "जारी रखने के लिए लॉगिन करें",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "login": "लॉगिन",
+    "loggingIn": "लॉगिन हो रहा है...",
+    "or": "या",
+    "continueWithGoogle": "Google के साथ जारी रखें",
+    "dontHaveAccount": "क्या आपका खाता नहीं है?",
+    "signUp": "साइन अप करें",
+    "otpSent": "OTP आपके ईमेल पर भेजा गया है",
+    "googleLoginSuccess": "Googgle लॉगिन सफल रहा",
+    "googleLoginFailed": "Googgle लॉगिन असफल रहा",
+    "loginSuccess": "लॉगिन सफल रहा",
+    "loginFailed": "लॉगिन असफल रहा"
+  },
+  "usersignup": {
+    "title": "साइन अप",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "createAccount": "खाता बनाएं",
+    "or": "या",
+    "continueWithGoogle": "Google के साथ जारी रखें",
+    "alreadyHaveAccount": "क्या आपका पहले से खाता है?",
+    "login": "लॉगिन",
+    "accountCreatedSuccess": "खाता सफलतापूर्वक बनाया गया",
+    "signedUpWithGoogle": "Google के साथ साइन अप सफल रहा",
+    "googleSignupFailed": "Google साइन अप असफल रहा"
+  },
+  "otp": {
+    "title": "लॉगिन सत्यापित करें",
+    "subtitle": "अपने ईमेल पर भेजा गया OTP दर्ज करें",
+    "placeholder": "OTP दर्ज करें",
+    "verifyButton": "OTP सत्यापित करें",
+    "verifying": "सत्यापित किया जा रहा है...",
+    "enterValidOtp": "मान्य 6-अंकों का OTP दर्ज करें",
+    "otpVerified": "OTP सत्यापित हो गया",
+    "invalidOtp": "अमान्य OTP"
+  },
+  "upgrade": {
+    "title": "अपनी इंटर्नशिप एक्सेस अपग्रेड करें",
+    "subtitle": "अधिक इंटर्नशिप आवेदन अनलॉक करने के लिए एक सब्सक्रिप्शन प्लान चुनें।",
+    "mostPopular": "सबसे लोकप्रिय",
+    "perMonth": "/माह",
+    "planActive": "प्लान सक्रिय है",
+    "processing": "प्रोसेसिंग...",
+    "buyNow": "अभी खरीदें",
+
+    "planAlreadyActive": "आपके पास पहले से एक सक्रिय प्लान है। आप इसके समाप्त होने के बाद ही अपग्रेड कर सकते हैं।",
+    "invalidPlan": "अमान्य प्लान चयनित किया गया है",
+    "createOrderFailed": "सब्सक्रिप्शन ऑर्डर बनाने में विफल",
+
+    "limitReached": "आप अपनी सभी आवेदन सीमाओं तक पहुँच चुके हैं। नया प्लान लेने के लिए महीने के समाप्त होने का इंतज़ार करें।",
+    "activeUntil": "सक्रिय रहेगा",
+    "daysLeft": "दिन शेष",
+
+    "userNotLoggedIn": "उपयोगकर्ता लॉग इन नहीं है",
+    "planExpiryMessage": "आपका वर्तमान प्लान {{date}} को समाप्त हो रहा है। आप उसी तारीख के बाद अपग्रेड कर सकते हैं।",
+    "upgradeTimeRestricted": "आप केवल सुबह 10 बजे से 11 बजे IST के बीच प्लान अपग्रेड कर सकते हैं",
+    "subscriptionActivated": "सब्सक्रिप्शन सक्रिय हो गया ✅",
+    "invoiceSent": "📧 चालान आपके पंजीकृत ईमेल पर भेज दिया गया है।",
+    "verificationFailed": "सत्यापन विफल ❌",
+    "somethingWentWrong": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
+
+    "plans": {
+      "FREE": "1 इंटर्नशिप के लिए आवेदन करें",
+      "BRONZE": "3 इंटर्नशिप के लिए आवेदन करें",
+      "SILVER": "5 इंटर्नशिप के लिए आवेदन करें",
+      "GOLD": "असीमित इंटर्नशिप"
+    },
+
+    "features": {
+      "oneApplication": "1 आवेदन",
+      "threeApplications": "3 आवेदन",
+      "fiveApplications": "5 आवेदन",
+      "unlimitedApplications": "असीमित आवेदन",
+      "basicAccess": "बेसिक एक्सेस",
+      "standardVisibility": "स्टैंडर्ड विजिबिलिटी",
+      "priorityListing": "प्राथमिकता सूची",
+      "topVisibility": "टॉप विजिबिलिटी"
+    }
+  },
+  "internship": {
+    "filters": "फ़िल्टर",
+    "clearAll": "सभी साफ करें",
+    "category": "श्रेणी",
+    "location": "स्थान",
+    "categoryPlaceholder": "उदा. मार्केटिंग इंटर्न",
+    "locationPlaceholder": "उदा. मुंबई",
+    "workFromHome": "घर से काम",
+    "partTime": "पार्ट-टाइम",
+    "monthlyStipend": "मासिक स्टाइपेंड (₹)",
+    "showFilters": "फ़िल्टर दिखाएँ",
+    "internshipsFound": "{{count}} इंटर्नशिप मिलीं",
+    "activelyHiring": "सक्रिय रूप से भर्ती",
+    "startDate": "प्रारंभ तिथि",
+    "stipend": "स्टाइपेंड",
+    "internshipType": "इंटर्नशिप",
+    "postedRecently": "हाल ही में पोस्ट किया गया",
+    "viewDetails": "विवरण देखें"
+  },
+  "footer": {
+    "internshipByPlaces": "स्थान के अनुसार इंटर्नशिप",
+    "internshipByStream": "स्ट्रीम के अनुसार इंटर्नशिप",
+    "jobPlaces": "नौकरी स्थान",
+    "jobsByStreams": "स्ट्रीम के अनुसार नौकरियाँ",
+
+    "places": {
+      "newYork": "न्यूयॉर्क",
+      "losAngeles": "लॉस एंजेलिस",
+      "chicago": "शिकागो",
+      "sanFrancisco": "सैन फ्रांसिस्को",
+      "miami": "मियामी",
+      "seattle": "सिएटल"
+    },
+
+    "about": "हमारे बारे में",
+    "careers": "करियर",
+    "press": "प्रेस",
+    "news": "समाचार",
+    "mediaKit": "मीडिया किट",
+    "contact": "संपर्क करें",
+
+    "blog": "ब्लॉग",
+    "newsletter": "न्यूज़लेटर",
+    "events": "कार्यक्रम",
+    "helpCenter": "सहायता केंद्र",
+    "tutorials": "ट्यूटोरियल",
+    "support": "सहायता",
+
+    "startups": "स्टार्टअप्स",
+    "enterprise": "एंटरप्राइज",
+    "government": "सरकार",
+    "saas": "सास",
+    "marketplaces": "मार्केटप्लेस",
+    "ecommerce": "ईकॉमर्स",
+
+    "teamDiary": "टीम डायरी",
+    "terms": "नियम और शर्तें",
+    "sitemap": "साइटमैप",
+
+    "getAndroidApp": "एंड्रॉइड ऐप प्राप्त करें",
+    "rights": "सभी अधिकार सुरक्षित"
+  },
+  "resumePage": {
+    "editYourResume": "अपना रिज्यूमे संपादित करें",
+    "createYourResume": "अपना रिज्यूमे बनाएं",
+    "updateAnytime": "आप कभी भी अपना रिज्यूमे अपडेट कर सकते हैं",
+    "otpPaymentRequired": "OTP सत्यापन और ₹50 भुगतान आवश्यक है",
+    "fullName": "पूरा नाम",
+    "email": "ईमेल",
+    "phone": "फ़ोन",
+    "qualification": "योग्यता",
+    "professionalDetails": "व्यावसायिक विवरण",
+    "skills": "कौशल",
+    "aboutYou": "आपके बारे में",
+    "uploadPhoto": "फोटो अपलोड करें",
+    "generateResumeOtp": "रिज्यूमे जनरेट करें (OTP)",
+    "enterOtp": "OTP दर्ज करें",
+    "verifyOtp": "OTP सत्यापित करें",
+    "payAndCreate": "₹50 भुगतान करें और रिज्यूमे बनाएं",
+    "saveChanges": "परिवर्तन सहेजें",
+    "toastOtpSent": "OTP आपके ईमेल पर भेज दिया गया है 📧",
+    "toastEmailVerified": "ईमेल सफलतापूर्वक सत्यापित हुआ ✅",
+    "toastResumeCreated": "रिज्यूमे सफलतापूर्वक बनाया गया 🎉",
+    "toastResumeUpdated": "रिज्यूमे सफलतापूर्वक अपडेट हुआ ✅",
+    "paymentFailed": "भुगतान प्रारंभ करने में विफल",
+    "paymentVerificationFailed": "भुगतान सत्यापन विफल",
+    "userNotLoggedIn": "उपयोगकर्ता लॉग इन नहीं है",
+    "failedToSendOtp": "OTP भेजने में विफल",
+    "otpVerificationFailed": "OTP सत्यापन विफल"
+  },
+   "loginHistoryPage": {
+    "loading": "लॉगिन इतिहास लोड हो रहा है...",
+    "title": "🔐 लॉगिन इतिहास",
+    "noHistory": "कोई लॉगिन इतिहास उपलब्ध नहीं है।",
+    "browser": "ब्राउज़र",
+    "os": "ऑपरेटिंग सिस्टम",
+    "device": "डिवाइस",
+    "ipAddress": "IP पता",
+    "loginTime": "लॉगिन समय",
+    "fetchError": "लॉगिन इतिहास प्राप्त करने में त्रुटि"
+  }
+}

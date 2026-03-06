@@ -12,6 +12,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
+import { LanguageContext } from "@/utils/LanguageContext";
+
 // const internshipData = [
 //   {
 //     _id: "1",
@@ -47,6 +50,18 @@ import React, { useEffect, useState } from "react";
 const index = () => {
   const [filteredInternships, setfilteredInternships] = useState<any>([]);
   const [isFiltervisible, setisFiltervisible] = useState(false);
+
+  const { language, changeLanguage, translations } =
+    useContext(LanguageContext);
+
+  const t = (key: string): string => {
+    return (
+      key.split(".").reduce((obj: any, i: string) => {
+        return obj?.[i];
+      }, translations) || key
+    );
+  };
+
   const [filter, setfilters] = useState({
     category: "",
     location: "",
@@ -54,21 +69,21 @@ const index = () => {
     partTime: false,
     stipend: 50,
   });
-  const [internshipData,setinternship]=useState<any>([])
-  useEffect(()=>{
-    const fetchdata=async()=>{
-      try {
-        const res=await axios.get( "https://internshala-clone-xhqv.onrender.com/api/internship")     
-        setinternship(res.data)
-        setfilteredInternships(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fetchdata()
-  },[])
+  const [internshipData, setinternship] = useState<any>([]);
   useEffect(() => {
-    const filtered = internshipData.filter((internship:any) => {
+    const fetchdata = async () => {
+      try {
+        const res = await axios.get("https://internshala-clone-xhqv.onrender.com/api/internship");
+        setinternship(res.data);
+        setfilteredInternships(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchdata();
+  }, []);
+  useEffect(() => {
+    const filtered = internshipData.filter((internship: any) => {
       const matchesCategory = internship.category
         .toLowerCase()
         .includes(filter.category.toLowerCase());
@@ -105,20 +120,22 @@ const index = () => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-2">
                 <Filter className="h-5 w-5 text-blue-600" />
-                <span className="font-medium text-black">Filters</span>
+                <span className="font-medium text-black">
+                  {t("internship.filters")}
+                </span>
               </div>
               <button
                 onClick={clearFilters}
                 className="text-sm text-blue-600 hover:text-blue-700"
               >
-                Clear all
+                {t("internship.clearAll")}
               </button>
             </div>
             <div className="space-y-6">
               {/* Profile/Category Filter */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Category
+                  {t("internship.category")}
                 </label>
                 <input
                   type="text"
@@ -132,7 +149,7 @@ const index = () => {
               {/* Location Filter */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Location
+                  {t("internship.location")}
                 </label>
                 <input
                   type="text"
@@ -154,7 +171,9 @@ const index = () => {
                     onChange={handlefilterchange}
                     className="h-4 w-4 text-blue-600 rounded "
                   />
-                  <span className="text-gray-700">Work from home</span>
+                  <span className="text-gray-700">
+                    {t("internship.workFromHome")}
+                  </span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input
@@ -164,14 +183,16 @@ const index = () => {
                     onChange={handlefilterchange}
                     className="h-4 w-4 text-blue-600 rounded"
                   />
-                  <span className="text-gray-700">Part-time</span>
+                  <span className="text-gray-700">
+                    {t("internship.partTime")}
+                  </span>
                 </label>
               </div>
 
               {/* Stipend Range */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Monthly Stipend (₹)
+                  {t(" internship.monthlyStipend")}
                 </label>
                 <input
                   type="range"
@@ -197,12 +218,12 @@ const index = () => {
                 className="w-full flex items-center justify-center space-x-2 bg-white p-3 rounded-lg shadow-sm text-black"
               >
                 <Filter className="h-5 w-5" />
-                <span> Show Filters</span>
+                <span> {t("internship.showFilters")}</span>
               </button>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
               <p className="text-center font-medium text-black">
-                {filteredInternships.length} Internships found
+               {t("internship.internshipsFound").replace("{{count}}", filteredInternships.length)}
               </p>
             </div>
             <div className="space-y-4">
@@ -213,7 +234,9 @@ const index = () => {
                 >
                   <div className="flex items-center space-x-2 text-blue-600 mb-4">
                     <ArrowUpRight className="h-5 w-5" />
-                    <span className="font-medium">Actively Hiring</span>
+                    <span className="font-medium">
+                      {t("internship.activelyHiring")}
+                    </span>
                   </div>
                   <h2 className="text-xl font-bold text-gray-900 mb-2">
                     {internship.title}
@@ -224,21 +247,27 @@ const index = () => {
                     <div className="flex items-center space-x-2 text-gray-600">
                       <PlayCircle className="h-5 w-5" />
                       <div>
-                        <p className="text-sm font-medium">Start Date</p>
+                        <p className="text-sm font-medium">
+                          {t("internship.startDate")}
+                        </p>
                         <p className="text-sm">{internship.startDate}</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-600">
                       <Pin className="h-5 w-5" />
                       <div>
-                        <p className="text-sm font-medium">Location</p>
+                        <p className="text-sm font-medium">
+                          {t("internship.location")}
+                        </p>
                         <p className="text-sm">{internship.location}</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-600">
                       <DollarSign className="h-5 w-5" />
                       <div>
-                        <p className="text-sm font-medium">Stipend</p>
+                        <p className="text-sm font-medium">
+                          {t("internship.stipend")}
+                        </p>
                         <p className="text-sm">{internship.stipend}</p>
                       </div>
                     </div>
@@ -246,18 +275,20 @@ const index = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
-                        Internship
+                        {t("internship.internshipType")}
                       </span>
                       <div className="flex items-center space-x-1 text-green-600">
                         <Clock className="h-4 w-4" />
-                        <span className="text-sm">Posted recently</span>
+                        <span className="text-sm">
+                          {t("internship.postedRecently")}
+                        </span>
                       </div>
                     </div>
                     <Link
                       href={`/detailinternship/${internship._id}`}
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
-                      View Details
+                      {t("internship.viewDetails")}
                     </Link>
                   </div>
                 </div>
@@ -283,7 +314,7 @@ const index = () => {
               {/* Profile/Category Filter */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Category
+                  {t("internship.category")}
                 </label>
                 <input
                   type="text"
@@ -297,7 +328,7 @@ const index = () => {
               {/* Location Filter */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Location
+                  {t("internship.location")}
                 </label>
                 <input
                   type="text"
@@ -319,7 +350,9 @@ const index = () => {
                     onChange={handlefilterchange}
                     className="h-4 w-4 text-blue-600 rounded "
                   />
-                  <span className="text-gray-700">Work from home</span>
+                  <span className="text-gray-700">
+                    {t("internship.workFromHome")}
+                  </span>
                 </label>
                 <label className="flex items-center space-x-2">
                   <input
@@ -336,7 +369,7 @@ const index = () => {
               {/* Stipend Range */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Monthly Stipend (₹)
+                  {t(" internship.monthlyStipend")}
                 </label>
                 <input
                   type="range"
@@ -354,7 +387,6 @@ const index = () => {
                 </div>
               </div>
             </div>
-           
           </div>
         </div>
       )}

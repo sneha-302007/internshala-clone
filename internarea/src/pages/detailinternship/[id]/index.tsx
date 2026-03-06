@@ -74,22 +74,22 @@ import { toast } from "react-toastify";
 const index = () => {
   const router = useRouter();
   const { id } = router.query;
-  const [internshipData,setinternship]=useState<any>([])
-  useEffect(()=>{
-    const fetchdata=async()=>{
+  const [internshipData, setinternship] = useState<any>([])
+  useEffect(() => {
+    const fetchdata = async () => {
       try {
-        const res=await axios.get( `https://internshala-clone-xhqv.onrender.com/api/internship/${id}`)     
+        const res = await axios.get(`https://internshala-clone-xhqv.onrender.com/api/internship/${id}`)
         setinternship(res.data)
       } catch (error) {
         console.log(error)
       }
     }
     fetchdata()
-  },[id])
+  }, [id])
   const [availability, setAvailability] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [coverLetter, setCoverLetter] = useState("");
-  const user=useSelector(selectuser)
+  const user = useSelector(selectuser)
   if (!internshipData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -97,31 +97,37 @@ const index = () => {
       </div>
     );
   }
-  const handlesubmitapplication=async()=>{
-    if(!coverLetter.trim()){
+  const handlesubmitapplication = async () => {
+    if (!coverLetter.trim()) {
       toast.error("please write a cover letter")
       return
     }
-    if(!availability){
+    if (!availability) {
       toast.error("please select your availability")
       return
     }
     try {
-      const applicationdata={
-        category:internshipData.category,
-        company:internshipData.company,
-        coverLetter:coverLetter,
-        user:user,
-        Application:id,
+      const applicationdata = {
+        category: internshipData.category,
+        company: internshipData.company,
+        coverLetter: coverLetter,
+        user: user,
+        Application: id,
         availability
       }
-      await axios.post("https://internshala-clone-xhqv.onrender.com/api/application",applicationdata)
+      await axios.post("https://internshala-clone-xhqv.onrender.com/api/application", applicationdata)
       toast.success("Application submit successfully")
       router.push('/internship')
-    } catch (error) {
-      console.error(error)
-      toast.error("Failed to submit application")
+    } catch (error: any) {
+      console.error(error);
+
+      if (error.response?.data?.message) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Failed to submit application");
+      }
     }
+
   }
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -229,9 +235,9 @@ const index = () => {
             <div className="p-6 space-y-6">
               {/* Resume Section */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <Link href="/resumeView" className="text-lg font-semibold underline text-gray-900 hover:text-blue-700 mb-2">
                   Your Resume
-                </h3>
+                </Link>
                 <p className="text-gray-600">
                   Your current resume will be submitted with the application
                 </p>
@@ -275,6 +281,7 @@ const index = () => {
                     </label>
                   ))}
                 </div>
+
               </div>
               <div className="flex justify-end pt-4">
                 {user ? (

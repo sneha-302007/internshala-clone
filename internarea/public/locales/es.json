@@ -1,0 +1,258 @@
+{
+  "navbar": {
+    "_note": "Spanish",
+    "home": "Inicio",
+    "Internships": "Pasantías",
+    "Jobs": "Empleos",
+    "Community": "Comunidad",
+    "Resume Generator": "Generador de CV",
+    "Search": "Buscar...",
+    "Admin": "Administrador",
+    "Login": "Iniciar sesión",
+    "Login History": "Historial de inicio",
+    "Upgrade": "Actualizar",
+    "Logout": "Cerrar sesión",
+    "Logged out successfully": "Sesión cerrada correctamente",
+    "Logout failed": "Error al cerrar sesión",
+    "Please login to access community": "Por favor inicia sesión para acceder a la comunidad"
+  },
+  "adminlogin": {
+    "title": "Inicio de sesión de administrador",
+    "Subtitle": "Accede al panel de administración para gestionar pasantías y solicitudes",
+    "username": "Nombre de usuario",
+    "usernamePlaceholder": "Ingresa tu nombre de usuario",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciando sesión...",
+    "fillAllDetails": "Por favor completa todos los campos",
+    "loginSuccess": "Inicio de sesión exitoso",
+    "invalidCredentials": "Credenciales inválidas"
+  },
+  "home": {
+    "heroTitle": "Haz realidad la carrera de tus sueños",
+    "heroSubtitle": "Tendencias en InternArea 🔥",
+
+    "premiumTitle": "¿Quieres postularte a más pasantías?",
+    "premiumSubtitle": "Actualiza tu suscripción y desbloquea oportunidades ilimitadas.",
+    "viewPlans": "Ver planes",
+
+    "latestInternships": "Últimas pasantías en Intern Area",
+    "popularCategories": "CATEGORÍAS POPULARES:",
+
+    "activelyHiring": "Contratando activamente",
+    "internshipTag": "Pasantía",
+    "jobTag": "Empleos",
+    "viewDetails": "Ver detalles",
+
+    "latestJobs": "Últimos empleos",
+
+    "statsCompanies": "empresas contratando",
+    "statsOpenings": "nuevas vacantes cada día",
+    "statsStudents": "estudiantes activos",
+    "statsLearners": "aprendices",
+
+    "categories": {
+      "bigBrands": "Grandes marcas",
+      "workFromHome": "Trabajo desde casa",
+      "partTime": "Medio tiempo",
+      "mba": "MBA",
+      "engineering": "Ingeniería",
+      "media": "Medios",
+      "design": "Diseño",
+      "dataScience": "Ciencia de datos"
+    },
+
+    "slides": {
+      "slide1": "Comienza tu carrera profesional",
+      "slide2": "Aprende de los mejores",
+      "slide3": "Desarrolla tus habilidades",
+      "slide4": "Conéctate con las mejores empresas"
+    }
+  },
+  "userlogin": {
+    "welcomeBack": "Bienvenido de nuevo 👋",
+    "loginToContinue": "Inicia sesión para continuar",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "login": "Iniciar sesión",
+    "loggingIn": "Iniciando sesión...",
+    "or": "O",
+    "continueWithGoogle": "Continuar con Google",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "signUp": "Regístrate",
+    "otpSent": "OTP enviado a tu correo electrónico",
+    "googleLoginSuccess": "Inicio de sesión Googgle exitoso",
+    "googleLoginFailed": "Error en el inicio de sesión Googgle",
+    "loginSuccess": "Inicio de sesión exitoso",
+    "loginFailed": "Error al iniciar sesión"
+  },
+  "usersignup": {
+    "title": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "createAccount": "Crear Cuenta",
+    "or": "O",
+    "continueWithGoogle": "Continuar con Google",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "login": "Iniciar sesión",
+    "accountCreatedSuccess": "Cuenta creada con éxito",
+    "signedUpWithGoogle": "Registrado con Google",
+    "googleSignupFailed": "Error en el registro con Google"
+  },
+  "otp": {
+    "title": "Verificar inicio de sesión",
+    "subtitle": "Ingrese el OTP enviado a su correo electrónico",
+    "placeholder": "Ingrese OTP",
+    "verifyButton": "Verificar OTP",
+    "verifying": "Verificando...",
+    "enterValidOtp": "Ingrese un OTP válido de 6 dígitos",
+    "otpVerified": "OTP verificado",
+    "invalidOtp": "OTP inválido"
+  },
+  "upgrade": {
+    "title": "Mejora tu acceso a pasantías",
+    "subtitle": "Elige un plan de suscripción para desbloquear más solicitudes de pasantías.",
+    "mostPopular": "MÁS POPULAR",
+    "perMonth": "/mes",
+    "planActive": "Plan activo",
+    "processing": "Procesando...",
+    "buyNow": "Comprar ahora",
+
+    "planAlreadyActive": "Ya tienes un plan activo. Puedes actualizar después de que expire.",
+    "invalidPlan": "Plan seleccionado no válido",
+    "createOrderFailed": "Error al crear la orden de suscripción",
+
+    "limitReached": "Has alcanzado todos tus límites de solicitud. Espera a que termine el mes para obtener un nuevo plan.",
+    "activeUntil": "Activo hasta",
+    "daysLeft": "días restantes",
+
+    "userNotLoggedIn": "Usuario no ha iniciado sesión",
+    "planExpiryMessage": "Tu plan actual vence el {{date}}. Solo puedes actualizar después de esa fecha.",
+    "upgradeTimeRestricted": "Solo puedes actualizar el plan entre las 10 AM y 11 AM IST",
+    "subscriptionActivated": "Suscripción activada ✅",
+    "invoiceSent": "📧 Factura enviada a tu correo electrónico registrado.",
+    "verificationFailed": "Verificación fallida ❌",
+    "somethingWentWrong": "Algo salió mal. Inténtalo de nuevo.",
+
+    "plans": {
+      "FREE": "Aplicar a 1 pasantía",
+      "BRONZE": "Aplicar a 3 pasantías",
+      "SILVER": "Aplicar a 5 pasantías",
+      "GOLD": "Pasantías ilimitadas"
+    },
+
+    "features": {
+      "oneApplication": "1 Solicitud",
+      "threeApplications": "3 Solicitudes",
+      "fiveApplications": "5 Solicitudes",
+      "unlimitedApplications": "Solicitudes ilimitadas",
+      "basicAccess": "Acceso básico",
+      "standardVisibility": "Visibilidad estándar",
+      "priorityListing": "Listado prioritario",
+      "topVisibility": "Máxima visibilidad"
+    }
+  },
+  "internship": {
+    "filters": "Filtros",
+    "clearAll": "Limpiar todo",
+    "category": "Categoría",
+    "location": "Ubicación",
+    "categoryPlaceholder": "ej. Pasante de Marketing",
+    "locationPlaceholder": "ej. Mumbai",
+    "workFromHome": "Trabajo desde casa",
+    "partTime": "Medio tiempo",
+    "monthlyStipend": "Estipendio mensual (₹)",
+    "showFilters": "Mostrar filtros",
+    "internshipsFound": "{{count}} pasantías encontradas",
+    "activelyHiring": "Contratación activa",
+    "startDate": "Fecha de inicio",
+    "stipend": "Estipendio",
+    "internshipType": "Pasantía",
+    "postedRecently": "Publicado recientemente",
+    "viewDetails": "Ver detalles"
+  },
+  "footer": {
+    "internshipByPlaces": "Pasantías por Lugar",
+    "internshipByStream": "Pasantías por Área",
+    "jobPlaces": "Lugares de Trabajo",
+    "jobsByStreams": "Trabajos por Área",
+
+    "places": {
+      "newYork": "Nueva York",
+      "losAngeles": "Los Ángeles",
+      "chicago": "Chicago",
+      "sanFrancisco": "San Francisco",
+      "miami": "Miami",
+      "seattle": "Seattle"
+    },
+
+    "about": "Sobre Nosotros",
+    "careers": "Carreras",
+    "press": "Prensa",
+    "news": "Noticias",
+    "mediaKit": "Kit de Medios",
+    "contact": "Contáctanos",
+
+    "blog": "Blog",
+    "newsletter": "Boletín",
+    "events": "Eventos",
+    "helpCenter": "Centro de Ayuda",
+    "tutorials": "Tutoriales",
+    "support": "Soporte",
+
+    "startups": "Startups",
+    "enterprise": "Empresas",
+    "government": "Gobierno",
+    "saas": "SaaS",
+    "marketplaces": "Mercados",
+    "ecommerce": "Comercio Electrónico",
+
+    "teamDiary": "Diario del Equipo",
+    "terms": "Términos y Condiciones",
+    "sitemap": "Mapa del Sitio",
+
+    "getAndroidApp": "Obtener Aplicación Android",
+    "rights": "Todos los Derechos Reservados"
+  },
+  "resumePage": {
+    "editYourResume": "Editar tu currículum",
+    "createYourResume": "Crear tu currículum",
+    "updateAnytime": "Puedes actualizar tu currículum en cualquier momento",
+    "otpPaymentRequired": "Se requiere verificación OTP y pago de ₹50",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "qualification": "Calificación",
+    "professionalDetails": "Detalles profesionales",
+    "skills": "Habilidades",
+    "aboutYou": "Sobre ti",
+    "uploadPhoto": "Subir foto",
+    "generateResumeOtp": "Generar currículum (OTP)",
+    "enterOtp": "Ingresar OTP",
+    "verifyOtp": "Verificar OTP",
+    "payAndCreate": "Pagar ₹50 y crear currículum",
+    "saveChanges": "Guardar cambios",
+    "toastOtpSent": "OTP enviado a tu correo 📧",
+    "toastEmailVerified": "Correo verificado con éxito ✅",
+    "toastResumeCreated": "Currículum creado con éxito 🎉",
+    "toastResumeUpdated": "Currículum actualizado con éxito ✅",
+    "paymentFailed": "Error al iniciar el pago",
+    "paymentVerificationFailed": "Verificación de pago fallida",
+    "userNotLoggedIn": "Usuario no ha iniciado sesión",
+    "failedToSendOtp": "Error al enviar el OTP",
+    "otpVerificationFailed": "La verificación del OTP falló"
+  },
+
+  "loginHistoryPage": {
+    "loading": "Cargando historial de inicio de sesión...",
+    "title": "🔐 Historial de inicio de sesión",
+    "noHistory": "No hay historial de inicio de sesión disponible.",
+    "browser": "Navegador",
+    "os": "Sistema operativo",
+    "device": "Dispositivo",
+    "ipAddress": "Dirección IP",
+    "loginTime": "Hora de inicio de sesión",
+    "fetchError": "Error al obtener el historial de inicio de sesión"
+  }
+}

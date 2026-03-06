@@ -1,0 +1,257 @@
+{
+  "navbar": {
+    "_note": "Chinese",
+    "home": "首页",
+    "Internships": "实习",
+    "Jobs": "工作",
+    "Community": "社区",
+    "Resume Generator": "简历生成器",
+    "Search": "搜索...",
+    "Admin": "管理员",
+    "Login": "登录",
+    "Login History": "登录历史",
+    "Upgrade": "升级",
+    "Logout": "退出登录",
+    "Logged out successfully": "成功退出登录",
+    "Logout failed": "退出失败",
+    "Please login to access community": "请登录以访问社区"
+  },
+  "adminlogin": {
+    "title": "管理员登录",
+    "Subtitle": "访问管理员仪表板以管理实习和申请",
+    "username": "用户名",
+    "usernamePlaceholder": "请输入用户名",
+    "password": "密码",
+    "passwordPlaceholder": "请输入密码",
+    "signIn": "登录",
+    "signingIn": "正在登录...",
+    "fillAllDetails": "请填写所有信息",
+    "loginSuccess": "登录成功",
+    "invalidCredentials": "无效的凭证"
+  },
+  "home": {
+    "heroTitle": "让你的梦想职业成为现实",
+    "heroSubtitle": "InternArea 热门趋势 🔥",
+
+    "premiumTitle": "想申请更多实习机会吗？",
+    "premiumSubtitle": "升级你的订阅，解锁无限机会。",
+    "viewPlans": "查看计划",
+
+    "latestInternships": "Intern Area 最新实习",
+    "popularCategories": "热门类别：",
+
+    "activelyHiring": "正在积极招聘",
+    "internshipTag": "实习",
+    "jobTag": "工作",
+    "viewDetails": "查看详情",
+
+    "latestJobs": "最新工作",
+
+    "statsCompanies": "正在招聘的公司",
+    "statsOpenings": "每天新增职位",
+    "statsStudents": "活跃学生",
+    "statsLearners": "学习者",
+
+    "categories": {
+      "bigBrands": "知名品牌",
+      "workFromHome": "远程工作",
+      "partTime": "兼职",
+      "mba": "MBA",
+      "engineering": "工程",
+      "media": "媒体",
+      "design": "设计",
+      "dataScience": "数据科学"
+    },
+
+    "slides": {
+      "slide1": "开启你的职业之旅",
+      "slide2": "向优秀者学习",
+      "slide3": "提升你的技能",
+      "slide4": "连接顶级公司"
+    }
+  },
+  "userlogin": {
+    "welcomeBack": "欢迎回来 👋",
+    "loginToContinue": "登录以继续",
+    "email": "电子邮箱",
+    "password": "密码",
+    "login": "登录",
+    "loggingIn": "正在登录...",
+    "or": "或",
+    "continueWithGoogle": "使用 Google 继续",
+    "dontHaveAccount": "还没有账户？",
+    "signUp": "注册",
+    "otpSent": "OTP 已发送到您的邮箱",
+    "googleLoginSuccess": "Googgle 登录成功",
+    "googleLoginFailed": "Googgle 登录失败",
+    "loginSuccess": "登录成功",
+    "loginFailed": "登录失败"
+  },
+  "usersignup": {
+    "title": "注册",
+    "email": "电子邮箱",
+    "password": "密码",
+    "createAccount": "创建账户",
+    "or": "或",
+    "continueWithGoogle": "使用 Google 继续",
+    "alreadyHaveAccount": "已经有账户？",
+    "login": "登录",
+    "accountCreatedSuccess": "账户创建成功",
+    "signedUpWithGoogle": "使用 Google 注册成功",
+    "googleSignupFailed": "Google 注册失败"
+  },
+  "otp": {
+    "title": "验证登录",
+    "subtitle": "请输入发送到您邮箱的 OTP",
+    "placeholder": "请输入 OTP",
+    "verifyButton": "验证 OTP",
+    "verifying": "验证中...",
+    "enterValidOtp": "请输入有效的6位 OTP",
+    "otpVerified": "OTP 验证成功",
+    "invalidOtp": "无效的 OTP"
+  },
+  "upgrade": {
+    "title": "升级您的实习访问权限",
+    "subtitle": "选择订阅计划以解锁更多实习申请。",
+    "mostPopular": "最受欢迎",
+    "perMonth": "/月",
+    "planActive": "计划已激活",
+    "processing": "处理中...",
+    "buyNow": "立即购买",
+
+    "planAlreadyActive": "您已经拥有一个有效的计划。请在到期后再升级。",
+    "invalidPlan": "所选计划无效",
+    "createOrderFailed": "创建订阅订单失败",
+
+    "limitReached": "您已达到所有申请限制。请等待月底再选择新计划。",
+    "activeUntil": "有效期至",
+    "daysLeft": "天剩余",
+
+    "userNotLoggedIn": "用户未登录",
+    "planExpiryMessage": "您的当前计划将于 {{date}} 到期。您只能在该日期之后升级。",
+    "upgradeTimeRestricted": "您只能在 IST 时间上午 10 点至 11 点之间升级计划",
+    "subscriptionActivated": "订阅已激活 ✅",
+    "invoiceSent": "📧 发票已发送至您的注册邮箱。",
+    "verificationFailed": "验证失败 ❌",
+    "somethingWentWrong": "出现问题。请重试。",
+
+    "plans": {
+      "FREE": "申请 1 个实习",
+      "BRONZE": "申请 3 个实习",
+      "SILVER": "申请 5 个实习",
+      "GOLD": "无限实习"
+    },
+
+    "features": {
+      "oneApplication": "1 次申请",
+      "threeApplications": "3 次申请",
+      "fiveApplications": "5 次申请",
+      "unlimitedApplications": "无限申请",
+      "basicAccess": "基础访问",
+      "standardVisibility": "标准曝光",
+      "priorityListing": "优先展示",
+      "topVisibility": "顶部展示"
+    }
+  },
+  "internship": {
+    "filters": "Filtros",
+    "clearAll": "Limpar tudo",
+    "category": "Categoria",
+    "location": "Localização",
+    "categoryPlaceholder": "ex. Estagiário de Marketing",
+    "locationPlaceholder": "ex. Mumbai",
+    "workFromHome": "Trabalho remoto",
+    "partTime": "Meio período",
+    "monthlyStipend": "Bolsa mensal (₹)",
+    "showFilters": "Mostrar filtros",
+    "internshipsFound": "{{count}} estágios encontrados",
+    "activelyHiring": "Contratando ativamente",
+    "startDate": "Data de início",
+    "stipend": "Bolsa",
+    "internshipType": "Estágio",
+    "postedRecently": "Publicado recentemente",
+    "viewDetails": "Ver detalhes"
+  },
+  "footer": {
+    "internshipByPlaces": "按地点分类的实习",
+    "internshipByStream": "按领域分类的实习",
+    "jobPlaces": "工作地点",
+    "jobsByStreams": "按领域分类的工作",
+
+    "places": {
+      "newYork": "纽约",
+      "losAngeles": "洛杉矶",
+      "chicago": "芝加哥",
+      "sanFrancisco": "旧金山",
+      "miami": "迈阿密",
+      "seattle": "西雅图"
+    },
+
+    "about": "关于我们",
+    "careers": "职业机会",
+    "press": "新闻发布",
+    "news": "新闻",
+    "mediaKit": "媒体资料包",
+    "contact": "联系我们",
+
+    "blog": "博客",
+    "newsletter": "新闻通讯",
+    "events": "活动",
+    "helpCenter": "帮助中心",
+    "tutorials": "教程",
+    "support": "支持",
+
+    "startups": "初创公司",
+    "enterprise": "企业",
+    "government": "政府",
+    "saas": "SaaS",
+    "marketplaces": "市场平台",
+    "ecommerce": "电子商务",
+
+    "teamDiary": "团队日记",
+    "terms": "条款和条件",
+    "sitemap": "网站地图",
+
+    "getAndroidApp": "获取安卓应用",
+    "rights": "版权所有"
+  },
+  "resumePage": {
+    "editYourResume": "编辑您的简历",
+    "createYourResume": "创建您的简历",
+    "updateAnytime": "您可以随时更新您的简历",
+    "otpPaymentRequired": "需要进行OTP验证和支付₹50",
+    "fullName": "全名",
+    "email": "电子邮件",
+    "phone": "电话",
+    "qualification": "学历",
+    "professionalDetails": "职业详情",
+    "skills": "技能",
+    "aboutYou": "关于你",
+    "uploadPhoto": "上传照片",
+    "generateResumeOtp": "生成简历（OTP）",
+    "enterOtp": "输入OTP",
+    "verifyOtp": "验证OTP",
+    "payAndCreate": "支付₹50并创建简历",
+    "saveChanges": "保存更改",
+    "toastOtpSent": "OTP已发送到您的邮箱 📧",
+    "toastEmailVerified": "邮箱验证成功 ✅",
+    "toastResumeCreated": "简历创建成功 🎉",
+    "toastResumeUpdated": "简历更新成功 ✅",
+    "paymentFailed": "支付启动失败",
+    "paymentVerificationFailed": "支付验证失败",
+    "userNotLoggedIn": "用户未登录",
+    "failedToSendOtp": "发送OTP失败",
+    "otpVerificationFailed": "OTP验证失败"
+  },
+  "loginHistoryPage": {
+    "loading": "正在加载登录历史...",
+    "title": "🔐 登录历史",
+    "noHistory": "暂无登录历史记录。",
+    "browser": "浏览器",
+    "os": "操作系统",
+    "device": "设备",
+    "ipAddress": "IP地址",
+    "loginTime": "登录时间",
+    "fetchError": "获取登录历史时出错"
+  }
+}
