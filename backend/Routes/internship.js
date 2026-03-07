@@ -37,15 +37,25 @@ router.get("/", async (req, res) => {
 });
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
+
   try {
-    const data = await Internship.findById(id);
-    if (!data) {
-      res.status(404).json({ error: "internship not found" });
+    // 🔥 Prevent crash if id is invalid
+    if (!id || id === "undefined") {
+      return res.status(400).json({ error: "Invalid internship ID" });
     }
-    res.json(data).status(200);
+
+    const data = await Internship.findById(id);
+
+    if (!data) {
+      return res.status(404).json({ error: "Internship not found" });
+    }
+
+    res.status(200).json(data);
+
   } catch (error) {
-    console.log(error);
-    res.status(404).json({ error: "internal server error" });
+    console.log("Internship fetch error:", error);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
+
 module.exports = router;

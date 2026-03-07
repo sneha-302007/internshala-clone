@@ -3,7 +3,16 @@ const Applicationschema = new mongoose.Schema({
     company: String,
     category: String,
     coverLetter: String,
-    user: Object,
+    user: {
+        uid: String,
+        name: String,
+        email: String
+    },
+    resume: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Resume",
+        default: null
+    },
     createdAt: {
         type: Date,
         default: Date.now,
@@ -15,4 +24,4 @@ const Applicationschema = new mongoose.Schema({
     },
     Application: Object,
 })
-module.exports=mongoose.model("Application",Applicationschema)
+module.exports = mongoose.model("Application", Applicationschema)
