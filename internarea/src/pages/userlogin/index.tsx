@@ -20,29 +20,31 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-   const { language, changeLanguage, translations } =
+  const { language, changeLanguage, translations } =
     useContext(LanguageContext);
-  
-    const t = (key: string): string => {
-      return (
-        key.split(".").reduce((obj: any, i: string) => {
-          return obj?.[i];
-        }, translations) || key
-      );
-    };
+
+  const t = (key: string): string => {
+    return (
+      key.split(".").reduce((obj: any, i: string) => {
+        return obj?.[i];
+      }, translations) || key
+    );
+  };
 
   const deviceInfo = getDeviceInfo();
 
   // 🔁 Sync user with backend
   const syncUser = async (firebaseUser: User) => {
-
-    const res = await axios.post("https://internshala-clone-xhqv.onrender.com/api/users/sync", {
-      uid: firebaseUser.uid,
-      name: firebaseUser.displayName || "User",
-      email: firebaseUser.email,
-      profilePhoto: firebaseUser.photoURL || "",
-      deviceInfo,
-    });
+    const res = await axios.post(
+      "https://internshala-clone-xhqv.onrender.com/api/users/sync",
+      {
+        uid: firebaseUser.uid,
+        name: firebaseUser.displayName || "User",
+        email: firebaseUser.email,
+        profilePhoto: firebaseUser.photoURL || "",
+        deviceInfo,
+      },
+    );
 
     return res.data;
   };
@@ -54,7 +56,7 @@ const Login = () => {
       setLoading(true);
 
       const result = await signInWithPopup(auth, provider);
-      const response : any= await syncUser(result.user);
+      const response: any = await syncUser(result.user);
       // ✅ Persist login identity
       localStorage.setItem("uid", result.user.uid);
       localStorage.setItem("email", result.user.email || "");
@@ -65,11 +67,11 @@ const Login = () => {
 
       // ⏳ OTP required
       if (response.status === "OTP_REQUIRED") {
-        document.cookie =
-          "otp_pending=true; path=/; max-age=300; SameSite=Lax";
+        document.cookie = "otp_pending=true; path=/; max-age=300; SameSite=Lax";
 
         toast.info(t("userlogin.otpSent"));
-        router.push("/otp");
+        setLoading(false); // stop loading
+        await router.push("/otp"); // wait for navigation
         return;
       }
 
@@ -79,7 +81,6 @@ const Login = () => {
       document.cookie = "mobile_blocked=; path=/; max-age=0";
       // ✅ SAVE UID FOR ENTIRE APP
       localStorage.setItem("uid", result.user.uid);
-
 
       toast.success(t("userlogin.googleLoginSuccess"));
       router.push("/");
@@ -93,7 +94,7 @@ const Login = () => {
         toast.error(message);
         return; // ⛔ STOP execution
       }
-      toast.error(message)
+      toast.error(message);
       toast.error(t("userlogin.googleLoginFailed"));
     } finally {
       setLoading(false);
@@ -108,21 +109,21 @@ const Login = () => {
       setLoading(true);
 
       const result = await signInWithEmailAndPassword(auth, email, password);
-      const response : any = await syncUser(result.user);
+      const response: any = await syncUser(result.user);
 
       // ✅ Persist login identity
       localStorage.setItem("uid", result.user.uid);
       localStorage.setItem("email", result.user.email || "");
       localStorage.setItem("name", "User"); // email login may not have displayName
 
-
       // ⏳ OTP required
       if (response.status === "OTP_REQUIRED") {
-        document.cookie =
-          "otp_pending=true; path=/; max-age=300; SameSite=Lax";
+        document.cookie = "otp_pending=true; path=/; max-age=300; SameSite=Lax";
 
-       toast.info(t("userlogin.otpSent"));
-        router.push("/otp");
+        toast.info(t("userlogin.otpSent"));
+
+        setLoading(false); // stop loading
+        await router.push("/otp"); // wait for navigation
         return;
       }
 
@@ -132,7 +133,6 @@ const Login = () => {
       document.cookie = "mobile_blocked=; path=/; max-age=0";
       // ✅ SAVE UID FOR ENTIRE APP
       localStorage.setItem("uid", result.user.uid);
-
 
       toast.success(t("userlogin.loginSuccess"));
       router.push("/");
@@ -146,7 +146,7 @@ const Login = () => {
         toast.error(message);
         return; // ⛔ STOP execution
       }
-      toast.error(message)
+      toast.error(message);
       toast.error(t("userlogin.loginFailed"));
     } finally {
       setLoading(false);
@@ -157,13 +157,17 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100 px-4">
       <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-8">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
-         {t("userlogin.welcomeBack")}
+          {t("userlogin.welcomeBack")}
         </h2>
-        <p className="text-center text-gray-500 mb-6">{t("userlogin.loginToContinue")}</p>
+        <p className="text-center text-gray-500 mb-6">
+          {t("userlogin.loginToContinue")}
+        </p>
 
         <form onSubmit={handleEmailLogin} className="space-y-4">
           <div>
-            <label className="text-sm text-gray-600">{t("userlogin.email")}</label>
+            <label className="text-sm text-gray-600">
+              {t("userlogin.email")}
+            </label>
             <input
               type="email"
               className="w-full mt-1 px-4 py-2 border rounded-lg"
@@ -174,7 +178,9 @@ const Login = () => {
           </div>
 
           <div>
-            <label className="text-sm text-gray-600">{t("userlogin.password")}</label>
+            <label className="text-sm text-gray-600">
+              {t("userlogin.password")}
+            </label>
             <input
               type="password"
               className="w-full mt-1 px-4 py-2 border rounded-lg"
@@ -195,7 +201,9 @@ const Login = () => {
 
         <div className="flex items-center my-6">
           <div className="flex-1 h-px bg-gray-300" />
-          <span className="px-3 text-sm text-gray-500">{t("userlogin.or")}</span>
+          <span className="px-3 text-sm text-gray-500">
+            {t("userlogin.or")}
+          </span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 
@@ -208,9 +216,9 @@ const Login = () => {
         </button>
 
         <p className="text-sm text-center mt-6 text-gray-600">
-       {t("userlogin.dontHaveAccount")}{" "}
+          {t("userlogin.dontHaveAccount")}{" "}
           <Link href="/usersignup" className="text-blue-600 font-medium">
-          {t("userlogin.signUp")}
+            {t("userlogin.signUp")}
           </Link>
         </p>
       </div>
