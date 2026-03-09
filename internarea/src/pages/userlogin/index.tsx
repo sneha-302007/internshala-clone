@@ -35,6 +35,7 @@ const Login = () => {
 
   // 🔁 Sync user with backend
   const syncUser = async (firebaseUser: User) => {
+    
     const res = await axios.post(
       "https://internshala-clone-xhqv.onrender.com/api/users/sync",
       {
@@ -57,6 +58,7 @@ const Login = () => {
 
       const result = await signInWithPopup(auth, provider);
       const response: any = await syncUser(result.user);
+      console.log("SYNC RESPONSE:", response);
       // ✅ Persist login identity
       localStorage.setItem("uid", result.user.uid);
       localStorage.setItem("email", result.user.email || "");
@@ -67,6 +69,8 @@ const Login = () => {
 
       // ⏳ OTP required
       if (response.status === "OTP_REQUIRED") {
+          console.log("OTP REQUIRED - redirecting");
+
         document.cookie = "otp_pending=true; path=/; max-age=300; SameSite=Lax";
 
         toast.info(t("userlogin.otpSent"));

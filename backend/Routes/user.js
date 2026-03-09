@@ -3,7 +3,6 @@ const router = express.Router();
 const User = require("../Model/User");
 const sendOtpEmail = require("../utils/sendOtpEmail");
 
-
 const getDeviceInfo = (req) => {
   const ua = req.headers["user-agent"] || "";
 
@@ -30,7 +29,6 @@ const getDeviceInfo = (req) => {
   return { browser, os, deviceType };
 };
 
-
 // 📌 Helper: Get client IP address
 const getClientIp = (req) => {
   return (
@@ -49,7 +47,6 @@ const isMobileAccessAllowed = () => {
   return currentHour >= 10 && currentHour < 13;
 };
 
-
 // 🔁 SYNC user (create or update)
 router.post("/sync", async (req, res) => {
   try {
@@ -67,7 +64,6 @@ router.post("/sync", async (req, res) => {
       });
     }
 
-
     // 🔹 existing login history object
     const loginEntry = {
       ip,
@@ -79,21 +75,11 @@ router.post("/sync", async (req, res) => {
 
     // 🔐 NEW: Chrome → OTP logic
     let otpRequired = false;
-    let otpData = {};
+    let otp = null;
 
     if (browser === "Chrome") {
       otpRequired = true;
-
-      const otp = Math.floor(100000 + Math.random() * 900000).toString();
-
-      otpData = {
-        otp,
-        otpExpiry: new Date(Date.now() + 5 * 60 * 1000), // 5 minutes
-        isOtpVerified: false,
-      };
-
-      // send OTP email
-      await sendOtpEmail(email, otp,"login");
+      otp = Math.floor(100000 + Math.random() * 900000).toString();
     }
 
     // 🔹 existing upsert logic (extended, not changed)
@@ -104,15 +90,27 @@ router.post("/sync", async (req, res) => {
           name,
           email,
           profilePhoto,
-          ...otpData, // ← added safely
+          ...(otpRequired && {
+            otp,
+            otpExpiry: new Date(Date.now() + 5 * 60 * 1000),
+            isOtpVerified: false,
+          }),
         },
         $push: { loginHistory: loginEntry },
       },
-      { upsert: true, new: true }
+      { upsert: true, new: true },
     );
-
-    // 🔐 NEW: Chrome response
     if (otpRequired) {
+      try {
+        await sendOtpEmail(user.email, otp, "login");
+      } catch (err) {
+        console.error("OTP email failed:", err);
+        return res.status(500).json({
+          status: "EMAIL_FAILED",
+          message: "Failed to send OTP",
+        });
+      }
+
       return res.status(200).json({
         status: "OTP_REQUIRED",
         message: "OTP sent to registered email",
@@ -136,14 +134,9 @@ router.post("/verify-otp", async (req, res) => {
   const { uid, otp, type } = req.body;
 
   const user = await User.findOne({ uid });
-  if (!user)
-    return res.status(404).json({ message: "User not found" });
+  if (!user) return res.status(404).json({ message: "User not found" });
 
-  if (
-    user.otp !== otp ||
-    !user.otpExpiry ||
-    user.otpExpiry < new Date()
-  ) {
+  if (user.otp !== otp || !user.otpExpiry || user.otpExpiry < new Date()) {
     return res.status(400).json({ message: "Invalid or expired OTP" });
   }
 
@@ -180,8 +173,6 @@ router.post("/send-otp", async (req, res) => {
 
   res.json({ success: true, message: "OTP sent" });
 });
-
-
 
 // 👤 Get user by firebase uid
 router.get("/uid/:uid", async (req, res) => {
@@ -232,7 +223,6 @@ router.put("/add-friend/:uid", async (req, res) => {
   });
 });
 
-
 router.put("/remove-friend/:uid", async (req, res) => {
   try {
     console.log("REMOVE FRIEND HIT");
@@ -251,8 +241,8 @@ router.put("/remove-friend/:uid", async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    user.friends = user.friends.filter(f => f !== friendUid);
-    friend.friends = friend.friends.filter(f => f !== req.params.uid);
+    user.friends = user.friends.filter((f) => f !== friendUid);
+    friend.friends = friend.friends.filter((f) => f !== req.params.uid);
 
     await user.save();
     await friend.save();
@@ -275,7 +265,7 @@ router.get("/login-history/:uid", async (req, res) => {
     }
 
     const sortedHistory = user.loginHistory.sort(
-      (a, b) => new Date(b.loggedInAt) - new Date(a.loggedInAt)
+      (a, b) => new Date(b.loggedInAt) - new Date(a.loggedInAt),
     );
 
     res.status(200).json(sortedHistory);
@@ -296,20 +286,16 @@ router.post("/save-resume", async (req, res) => {
   const user = await User.findOneAndUpdate(
     { uid },
     { resume: resumeId },
-    { new: true }
+    { new: true },
   );
 
   res.json({ message: "Resume saved to profile", user });
 });
 
-
 router.post("/auto-attach-resume", async (req, res) => {
   const { uid } = req.body;
 
-  await User.findOneAndUpdate(
-    { uid },
-    { autoAttachResume: true }
-  );
+  await User.findOneAndUpdate({ uid }, { autoAttachResume: true });
 
   res.json({ message: "Auto attach enabled" });
 });
@@ -323,8 +309,7 @@ router.get("/profile", async (req, res) => {
       return res.status(400).json({ message: "UID required" });
     }
 
-    const user = await User.findOne({ uid })
-      .populate("resume"); // 🔥 this is the key
+    const user = await User.findOne({ uid }).populate("resume"); // 🔥 this is the key
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -338,7 +323,7 @@ router.get("/profile", async (req, res) => {
         photo: user.profilePhoto,
       },
       resume: user.resume || null,
-      autoAttachResume: user.autoAttachResume || false
+      autoAttachResume: user.autoAttachResume || false,
     });
   } catch (err) {
     console.error("Profile fetch error:", err);
@@ -346,6 +331,4 @@ router.get("/profile", async (req, res) => {
   }
 });
 
-
 module.exports = router;
-
