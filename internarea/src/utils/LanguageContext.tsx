@@ -25,9 +25,16 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
 
   useEffect(() => {
-    const savedLang = localStorage.getItem("language") || "en";
+  const savedLang = localStorage.getItem("language") || "en";
+
+  // Prevent automatic French load without verification
+  if (savedLang === "fr" && !user?.isFrenchVerified) {
+    loadLanguage("en");
+    localStorage.setItem("language", "en");
+  } else {
     loadLanguage(savedLang);
-  }, []);
+  }
+}, [user]);
 
   const loadLanguage = async (lang: string) => {
     try {
