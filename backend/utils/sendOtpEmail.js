@@ -1,15 +1,6 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  port: 587,
-  secure: false,
-  connectionTimeout: 10000,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendOtpEmail = async (to, otp, purpose = "login") => {
   let subject = "OTP Verification";
@@ -40,11 +31,11 @@ const sendOtpEmail = async (to, otp, purpose = "login") => {
     case "french":
       subject = "Language Change Verification (French)";
       html = `
-    <h2>French Language Activation</h2>
-    <p>Use this OTP to enable French language:</p>
-    <h1>${otp}</h1>
-    <p>This OTP is valid for 5 minutes.</p>
-  `;
+        <h2>French Language Activation</h2>
+        <p>Use this OTP to enable French language:</p>
+        <h1>${otp}</h1>
+        <p>This OTP is valid for 5 minutes.</p>
+      `;
       break;
 
     default:
@@ -55,11 +46,11 @@ const sendOtpEmail = async (to, otp, purpose = "login") => {
   }
 
   try {
-    await transporter.sendMail({
-      from: `"Intern App" <${process.env.EMAIL_USER}>`,
-      to,
-      subject,
-      html,
+    await resend.emails.send({
+      from: "Intern App <onboarding@resend.dev>", // default resend sender
+      to: to,
+      subject: subject,
+      html: html,
     });
 
     console.log("OTP email sent to:", to);
