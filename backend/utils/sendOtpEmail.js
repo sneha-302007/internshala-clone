@@ -40,7 +40,8 @@ const sendOtpEmail = async (to, otp, purpose = "login") => {
     await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
       service_id: SERVICE_ID,
       template_id: TEMPLATE_ID,
-     accessToken: process.env.EMAILJS_PRIVATE_KEY,
+      user_id: process.env.EMAILJS_PUBLIC_KEY,  
+      accessToken: process.env.EMAILJS_PRIVATE_KEY,
       template_params: {
         email: to,
         subject,
