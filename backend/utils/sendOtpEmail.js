@@ -47,7 +47,7 @@ const sendOtpEmail = async (to, otp, purpose = "login") => {
 
   try {
     await resend.emails.send({
-      from: "Intern App <snehakolekar1632@gmail.com>", // default resend sender
+      from:  "onboarding@resend.dev", // default resend sender
       to: to,
       subject: subject,
       html: html,
