@@ -1,61 +1,60 @@
-const { Resend } = require("resend");
+const axios = require("axios");
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
+const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
+
+const TEMPLATE_ID = "template_q8dx3ba"; // paste OTP template id here
 
 const sendOtpEmail = async (to, otp, purpose = "login") => {
+
   let subject = "OTP Verification";
-  let html = "";
+  let title = "Verification";
+  let message = "";
+  let footer = "";
 
   switch (purpose) {
     case "login":
       subject = "Login OTP Verification";
-      html = `
-        <h2>Login Verification</h2>
-        <p>Your login OTP is:</p>
-        <h1>${otp}</h1>
-        <p>This OTP is valid for 5 minutes.</p>
-        <p>If you did not try to log in, please ignore this email.</p>
-      `;
+      title = "Login Verification";
+      message = "Your login OTP is:";
+      footer = "If you did not try to log in, please ignore this email.";
       break;
 
     case "resume":
       subject = "Resume Generation OTP";
-      html = `
-        <h2>Resume Verification</h2>
-        <p>Use the OTP below to verify resume generation:</p>
-        <h1>${otp}</h1>
-        <p>This OTP is valid for 5 minutes.</p>
-      `;
+      title = "Resume Verification";
+      message = "Use the OTP below to verify resume generation:";
       break;
 
     case "french":
       subject = "Language Change Verification (French)";
-      html = `
-        <h2>French Language Activation</h2>
-        <p>Use this OTP to enable French language:</p>
-        <h1>${otp}</h1>
-        <p>This OTP is valid for 5 minutes.</p>
-      `;
+      title = "French Language Activation";
+      message = "Use this OTP to enable French language:";
       break;
 
     default:
-      html = `
-        <p>Your OTP is:</p>
-        <h1>${otp}</h1>
-      `;
+      message = "Your OTP is:";
   }
 
   try {
-    await resend.emails.send({
-      from:  "onboarding@resend.dev", // default resend sender
-      to: to,
-      subject: subject,
-      html: html,
+    await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
+      service_id: SERVICE_ID,
+      template_id: TEMPLATE_ID,
+      user_id: PUBLIC_KEY,
+      template_params: {
+        email: to,
+        subject,
+        title,
+        message,
+        footer,
+        otp
+      }
     });
 
     console.log("OTP email sent to:", to);
+
   } catch (error) {
-    console.error("Email sending failed:", error);
+    console.error("Email sending failed:", error.response?.data || error);
     throw error;
   }
 };

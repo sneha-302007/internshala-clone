@@ -11,7 +11,7 @@ router.post("/send-otp", async (req, res) => {
     const { email } = req.body;
     if (!email) return res.status(400).json({ message: "Email is required" });
 
-    await Resume.sendOtp(email, sendOtpEmail);
+   await sendOtpEmail(email, otp, "resume");
     res.json({ message: "OTP sent to your email" });
   } catch (err) {
     console.error("Send OTP Error:", err);

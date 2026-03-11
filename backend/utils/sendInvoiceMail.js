@@ -1,14 +1,12 @@
-const nodemailer = require("nodemailer");
+const axios = require("axios");
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
+const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
 
-const sendInvoiceEmail = async ({
+// paste your EmailJS invoice template id here
+const TEMPLATE_ID = "template_853t4im";
+
+const sendInvoiceMail = async ({
   to,
   name,
   plan,
@@ -22,41 +20,33 @@ const sendInvoiceEmail = async ({
   const formattedStart = new Date(startDate).toLocaleDateString("en-IN");
   const formattedEnd = new Date(endDate).toLocaleDateString("en-IN");
 
-  const html = `
-    <div style="font-family: Arial, sans-serif; padding: 20px;">
-      <h2 style="color: #2563eb;">Payment Successful 🎉</h2>
-      
-      <p>Hi ${name || "User"},</p>
-      
-      <p>Thank you for upgrading your subscription. Here are your invoice details:</p>
+  try {
+    await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
+      service_id: SERVICE_ID,
+      template_id: TEMPLATE_ID,
+      user_id: PUBLIC_KEY,
+      template_params: {
+        email: to,
+        name: name || "User",
+        plan: plan,
+        amount: amount,
+        payment_id: paymentId,
+        invoice_id: invoiceId,
+        start_date: formattedStart,
+        end_date: formattedEnd,
+      },
+    });
 
-      <hr/>
+    console.log("Invoice email sent to:", to);
 
-      <h3>Invoice Details</h3>
-      <p><strong>Invoice ID:</strong> ${invoiceId}</p>
-      <p><strong>Payment ID:</strong> ${paymentId}</p>
-      <p><strong>Plan:</strong> ${plan}</p>
-      <p><strong>Amount Paid:</strong> ₹${amount}</p>
-      <p><strong>Start Date:</strong> ${formattedStart}</p>
-      <p><strong>Expiry Date:</strong> ${formattedEnd}</p>
-
-      <hr/>
-
-      <p>Your plan is now active. Enjoy applying for internships!</p>
-
-      <br/>
-      <p>Regards,</p>
-      <p><strong>Intern App Team</strong></p>
-    </div>
-  `;
-
-  await transporter.sendMail({
-    from: `"Intern App" <${process.env.EMAIL_USER}>`,
-    to,
-    subject: `Invoice for ${plan} Plan - Intern App`,
-    html,
-  });
-  return invoiceId; // 🔥 important
+    return invoiceId; // important for storing invoice id
+  } catch (error) {
+    console.error(
+      "Invoice email sending failed:",
+      error.response?.data || error
+    );
+    throw error;
+  }
 };
 
-module.exports = sendInvoiceEmail;
+module.exports = sendInvoiceMail;
