@@ -35,7 +35,6 @@ const Login = () => {
 
   // 🔁 Sync user with backend
   const syncUser = async (firebaseUser: User) => {
-    
     const res = await axios.post(
       "https://internshala-clone-xhqv.onrender.com/api/users/sync",
       {
@@ -69,7 +68,7 @@ const Login = () => {
 
       // ⏳ OTP required
       if (response.status === "OTP_REQUIRED") {
-          console.log("OTP REQUIRED - redirecting");
+        console.log("OTP REQUIRED - redirecting");
 
         document.cookie = "otp_pending=true; path=/; max-age=300; SameSite=Lax";
 
@@ -192,6 +191,14 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+          </div>
+          <div className="text-right">
+            <Link
+              href="/forgotPassword"
+              className="text-sm text-blue-600 hover:underline"
+            >
+              Forgot Password?
+            </Link>
           </div>
 
           <button
