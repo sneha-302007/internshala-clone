@@ -4,15 +4,20 @@ const Resume = require("../Model/Resume");
 const sendOtpEmail = require("../utils/sendOtpEmail");
 const User = require("../Model/User");
 
-
 // Send OTP
 router.post("/send-otp", async (req, res) => {
   try {
     const { email } = req.body;
-    if (!email) return res.status(400).json({ message: "Email is required" });
 
-   await sendOtpEmail(email, otp, "resume");
+    if (!email) {
+      return res.status(400).json({ message: "Email is required" });
+    }
+
+    // Use the model function
+    await Resume.sendOtp(email, sendOtpEmail);
+
     res.json({ message: "OTP sent to your email" });
+
   } catch (err) {
     console.error("Send OTP Error:", err);
     res.status(500).json({ message: "Failed to send OTP" });
@@ -33,7 +38,7 @@ router.post("/verify-otp", async (req, res) => {
     return res.json({
       status: "SUCCESS",
       otpVerified: true,
-      message: "OTP verified successfully"
+      message: "OTP verified successfully",
     });
   } catch (err) {
     console.error("Verify OTP Error:", err);
@@ -54,7 +59,7 @@ router.post("/create", async (req, res) => {
       skills,
       about,
       photo,
-      paymentVerified
+      paymentVerified,
     } = req.body;
 
     if (!uid) {
@@ -72,7 +77,7 @@ router.post("/create", async (req, res) => {
 
     if (existingResume) {
       return res.status(409).json({
-        message: "Resume already exists. Please update it instead."
+        message: "Resume already exists. Please update it instead.",
       });
     }
 
@@ -93,7 +98,7 @@ router.post("/create", async (req, res) => {
         resume: resume._id,
         autoAttachResume: true,
       },
-      { new: true }
+      { new: true },
     );
     res.json({ message: "Resume created successfully", resume });
   } catch (err) {
@@ -132,11 +137,7 @@ router.put("/update", async (req, res) => {
       return res.status(400).json({ message: "UID required" });
     }
 
-    const resume = await Resume.findOneAndUpdate(
-      { uid },
-      data,
-      { new: true }
-    );
+    const resume = await Resume.findOneAndUpdate({ uid }, data, { new: true });
 
     if (!resume) {
       return res.status(404).json({ message: "Resume not found" });
@@ -163,4 +164,3 @@ router.get("/exists/:uid", async (req, res) => {
 });
 
 module.exports = router;
-
