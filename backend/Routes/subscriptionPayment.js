@@ -22,7 +22,7 @@ function isWithinPaymentTime() {
     now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }),
   );
   const hour = ist.getHours();
-  return hour >= 10 && hour < 11;
+  return hour >= 10 && hour < 17;
   return true;
 }
 
